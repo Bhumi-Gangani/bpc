@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-import { BrowserRouter, Route, Routes  } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Signup from './pages/signup/Signup'
 import NotFound from './pages/notFound/NotFound'
 import Profile from './pages/profile/Profile'
@@ -17,11 +17,10 @@ const App = () => {
             <Routes>
               {/* General routes */}
               <Route path="/signup" element={<Signup />} />
-              <Route path="/" element={<Signup />} />
 
               {/* Private routes */}
               <Route path="/profile" element={<AuthRoute><Profile /></AuthRoute>} />
-             
+
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

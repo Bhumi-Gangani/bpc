@@ -8,15 +8,18 @@ const apiRequest = async ({
     isToken,
 }) => {
 
+
     let response = null, error = null
     let options = {
         method: method,
-        url: `${import.meta.env.VITE_API_URL}/${url}`,
+        url: `${process.env.REACT_APP_API_URL}${url}`,
         headers: {
             'Accept': 'application/json',
         },
         data: data
     }
+
+    console.log('options', options)
 
     if (isToken) {
         let { auth } = store.getState()

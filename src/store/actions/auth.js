@@ -2,11 +2,12 @@ import { apiRequest } from "../../services/apiService";
 import { SIGNUP_FAIL, SIGNUP_REQUEST, SIGNUP_SUCCESS } from "../constant";
 
 export const signUp = (payload, successCallback, errorCallback) => {
+     console.log('signup', payload)
     return async (dispatch) => {
         dispatch({ type: SIGNUP_REQUEST });
         const { response, error } = await apiRequest({
             method: 'POST',
-            url: `signUp`,
+            url: `signup`,
             data: payload
         })
         if (response) {
